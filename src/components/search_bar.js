@@ -28,8 +28,6 @@ class SearchBar extends Component {
     return <input onChange={(event) => { console.log(event.target.value) }} />;
   }
 
-
-
 }
 
 // class SearchBar extends Component {
