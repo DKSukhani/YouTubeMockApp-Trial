@@ -1,12 +1,4 @@
 import React, { Component } from 'react';
-import API_Keys from './../../API_Keys';
-import YTSearch from 'youtube-api-search';
-
-
-
-YTSearch({ key: API_Keys, term: 'dipesh sukhani' }, function (data) {
-  console.log(data);
-});
 
 // DIPESH COMMENT: THE FOLLOWING DOES NOT WORK
 // const SearchBar = (
