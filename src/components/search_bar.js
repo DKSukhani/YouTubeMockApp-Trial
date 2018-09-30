@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import API_Keys from './../../API_Keys';
+import YTSearch from 'youtube-api-search';
 
 
+
+YTSearch({ key: API_Keys, term: 'dipesh sukhani' }, function (data) {
+  console.log(data);
+});
 
 // DIPESH COMMENT: THE FOLLOWING DOES NOT WORK
 // const SearchBar = (
@@ -15,8 +21,6 @@ import React, { Component } from 'react';
 //     Hi how are you?
 // </div>;
 // };
-
-
 // DKS Comment: the below is a functional component and does not know what is being inputed
 // const SearchBar = () => {
 //   return <input />
@@ -26,12 +30,10 @@ import React, { Component } from 'react';
 
 class SearchBar extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = { term: '' };
+    this.state = { term: '' }
   }
-
-
   render() {
     return (
       <div>
@@ -40,15 +42,14 @@ class SearchBar extends Component {
           onChange={(event) => this.setState({ term: event.target.value })} />
         <br />
         Value of the input is: {this.state.term}
-      </div >);
+
+      </div >
+
+    )
 
     // return <input onChange={(event) => { console.log(event.target.value) }} />;
   }
-
-}
-
-
-// based on the syntax: setState is a function / method that uses object as its argument
+}// based on the syntax: setState is a function / method that uses object as its argument
 
 // class SearchBar extends Component {
 //   render() {
@@ -69,4 +70,4 @@ class SearchBar extends Component {
 
 // }
 
-export default SearchBar;
+export default SearchBar
