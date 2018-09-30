@@ -4,30 +4,34 @@ import SearchBar from './components/search_bar';
 import API_Keys from './../API_Keys';
 import YTSearch from 'youtube-api-search';
 
-YTSearch({ key: API_Keys, term: 'dipesh sukhani' }, function (data) {
-  console.log(data);
-});
 
 
 class App extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.state = {}
+    this.state = { videos: [] };
+
+    YTSearch({ key: API_Keys, term: 'Indorse Dipesh' }, (videos) => {
+      this.setState({ videos });
+    });
+
+
+
   }
-
-
-
 
   render() {
     return (
       <div>
         <SearchBar />
+        {console.log(this.state)}
       </div>
     )
 
   }
+
+
 
 }
 
