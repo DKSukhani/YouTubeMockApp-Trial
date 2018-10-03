@@ -10,7 +10,7 @@ class VideoList extends Component {
         });
         return (
             <div>
-                <ul className="col-md-4 list-group">
+                <ul className="col-md-8 list-group">
                     {VideoItems}
                 </ul>
             </div>

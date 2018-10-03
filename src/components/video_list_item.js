@@ -11,7 +11,7 @@ const VideoListItem = ({ video }) => {
                     <img className='media-object' src={imageUrl} />
                 </div>
 
-                <div className='media-body'>
+                <div className='media-body media-heading'>
                     <div className='media-heading'>
                         {video.snippet.title}
                     </div>
