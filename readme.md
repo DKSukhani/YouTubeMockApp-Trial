@@ -1,12 +1,12 @@
 # React-Redux Boilerplate
 
-This is the sequel to this repo: [https://github.com/guidovizoso/react-boilerplate](https://github.com/guidovizoso/react-boilerplate)
+This is based on the boilerplate repo: [https://github.com/guidovizoso/react-boilerplate](https://github.com/guidovizoso/react-boilerplate)
 
 ## How to use it
 
 Installing:
 
-    git clone https://github.com/guidovizoso/react-redux-boilerplate.git
+    git clone this repo
     npm install
 
 Commands:
@@ -48,11 +48,4 @@ Commands:
 * Styled Components
 * ESlint
 
-## Roadmap
-
-* [x] Initial version
-* [x] Img support
-* [ ] Optional SASS and PostCSS
-* [ ] Testing support
-
-:speech_balloon: Made by **Guido Vizoso** <[https://www.linkedin.com/in/guidovizoso/](https://www.linkedin.com/in/guidovizoso/)>
+:speech_balloon: Made by **Dipesh Sukhani** <[https://www.linkedin.com/in/dipeshsukhani](https://www.linkedin.com/in/dipeshsukhani)>
