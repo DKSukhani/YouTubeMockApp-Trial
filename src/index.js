@@ -12,11 +12,18 @@ import VideoDetail from './components/video_detail';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { videos: [] };
+    this.state = {
+      selectedVideo: null,
+      videos: []
+    };
   }
+
   componentDidMount() {
-    YTSearch({ key: API_Keys, term: 'Dipesh Sukhani' }, (videos) => {
-      this.setState({ videos });
+    YTSearch({ key: API_Keys, term: 'Atif Aslam' }, (videos) => {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
     });
   }
   componentDidUpdate(prevState) {
@@ -29,7 +36,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]} />
+        <VideoDetail video={this.state.selectedVideo} />
         <VideoList videos={this.state.videos} />
       </div>
     )
