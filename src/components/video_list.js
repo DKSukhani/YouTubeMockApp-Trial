@@ -6,7 +6,12 @@ import VideoListItem from './video_list_item';
 class VideoList extends Component {
     render() {
         const VideoItems = this.props.videos.map((video) => {
-            return <VideoListItem key={video.etag} video={video} />
+            return (
+                <VideoListItem
+                    onVideoSelected={this.props.onVideoSelect}
+                    key={video.etag}
+                    video={video} />
+            )
         });
         return (
             <div>

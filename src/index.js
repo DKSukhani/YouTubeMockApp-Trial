@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    YTSearch({ key: API_Keys, term: 'Atif Aslam' }, (videos) => {
+    YTSearch({ key: API_Keys, term: 'Dipesh Sukhani' }, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -38,7 +38,7 @@ class App extends Component {
         <SearchBar />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
-          onVideoSelected={(selectedVideo) => this.setState({ selectedVideo })}
+          onVideoSelect={(selectedVideo) => this.setState({ selectedVideo })}
           videos={this.state.videos}
         />
       </div>
