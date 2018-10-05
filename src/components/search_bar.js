@@ -29,17 +29,22 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <input
+        <input className='search-bar'
           value={this.state.term}
-          onChange={(event) => this.setState({ term: event.target.value })} />
+          onChange={(event) => this.onInputChange(event.target.value)} />
         <br />
       </div >
 
     )
-
+  }
+  onInputChange(term) {
+    this.setState({ term });
+    this.props.onSearchTermChange(term);
     // return <input onChange={(event) => { console.log(event.target.value) }} />;
   }
-}// based on the syntax: setState is a function / method that uses object as its argument
+}
+
+// based on the syntax: setState is a function / method that uses object as its argument
 
 // class SearchBar extends Component {
 //   render() {

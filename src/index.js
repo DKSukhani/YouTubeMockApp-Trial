@@ -19,23 +19,30 @@ class App extends Component {
   }
 
   componentDidMount() {
-    YTSearch({ key: API_Keys, term: 'Dipesh Sukhani' }, (videos) => {
-      this.setState({
-        videos: videos,
-        selectedVideo: videos[0]
-      });
-    });
+    this.videoSearch('stephen grider reactjs')
   }
+
   componentDidUpdate(prevState) {
     const { videos } = this.state;
     if (prevState.videos !== videos) {
       console.log(videos);
     }
   }
+
+  videoSearch(term) {
+    YTSearch({ key: API_Keys, term: term }, (videos) => {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
+    });
+  }
+
+
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={(term) => this.videoSearch(term)} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           onVideoSelect={(selectedVideo) => this.setState({ selectedVideo })}
