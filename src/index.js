@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
@@ -22,12 +23,12 @@ class App extends Component {
     this.videoSearch('stephen grider reactjs')
   }
 
-  componentDidUpdate(prevState) {
-    const { videos } = this.state;
-    if (prevState.videos !== videos) {
-      console.log(videos);
-    }
-  }
+  // componentDidUpdate(prevState) {
+  //   const { videos } = this.state;
+  //   if (prevState.videos !== videos) {
+  //     console.log(videos);
+  //   }
+  // }
 
   videoSearch(term) {
     YTSearch({ key: API_Keys, term: term }, (videos) => {
@@ -39,10 +40,13 @@ class App extends Component {
   }
 
 
+
   render() {
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+
     return (
       <div>
-        <SearchBar onSearchTermChange={(term) => this.videoSearch(term)} />
+        <SearchBar onSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           onVideoSelect={(selectedVideo) => this.setState({ selectedVideo })}
